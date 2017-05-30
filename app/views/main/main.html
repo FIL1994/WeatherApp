@@ -1,0 +1,45 @@
+
+<div class="text-center container">
+    <h3>Weather App</h3>
+
+    <button type="button" class="button" ng-click="getWeather()">Get Weather</button>
+    <br>
+    <img src="{{info.image.url}}">
+    <hr>
+    {{info.item.title}}
+    <br>
+    <span ng-if="info.item.condition.temp">{{info.item.condition.temp |toCelsius}}</span>
+    <br>
+
+    <div class="row">
+        <div class="small-6 large-centered columns">
+            <ui-carousel
+                slides="info.item.forecast"
+                slides-to-show="3"
+                slides-to-scroll="1"
+                initial-slide="1"
+                dots="false"
+                arrows="true"
+                autoplay="false"
+                speed="600">
+
+                <carousel-item>
+                    <div class="card" style="height:270px">
+                        <div class="card-divider">
+                            {{item.date}}
+                        </div>
+                        <!--Get the icon for the weather-->
+                        <img src="http://l.yimg.com/a/i/us/we/52/{{item.code}}.gif">
+                        <div class="card-section">
+                            <h5>{{item.text}}</h5>
+                            <p>
+                                High: {{item.high | toCelsius}} <br> <!--Use the toCelsius filter-->
+                                Low: {{item.low | toCelsius}}
+                            </p>
+                        </div>
+                    </div>
+                </carousel-item>
+            </ui-carousel>
+        </div>
+    </div>
+</div>
