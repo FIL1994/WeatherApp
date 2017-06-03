@@ -1,5 +1,5 @@
 # WeatherApp
-A basic Angular app that uses the Yahoo Weather API and HTML5 Geolocation
+A basic Angular app that uses the Yahoo Weather API and HTML5 Geolocation.
 
 * [Angular](https://angularjs.org/)
 * [Foundation](http://foundation.zurb.com/)
